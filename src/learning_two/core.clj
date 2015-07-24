@@ -5,6 +5,6 @@
         (rest nums)))
 
 (defn first-element [sequence default]
-  (if (nil? sequence)
+  (if (empty? sequence)
     default
     (first sequence)))

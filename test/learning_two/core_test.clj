@@ -12,7 +12,7 @@
             (is (= '(2 2 3) (inc-first [1 2 3])))))
 
 (fact "default value is returned for empty sequences"
-      (first-element [] :default) => nil
-      (first-element '() :default) => nil
+      (first-element [] :default) => :default
+      (first-element '() :default) => :default
       (first-element nil :default) => :default
-      (first-element (filter even? [1 3 5]) :default) => nil)
+      (first-element (filter even? [1 3 5]) :default) => :default)
