@@ -3,10 +3,6 @@
             [learning-two.core :refer :all])
   (:use midje.sweet))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 0))))
-
 (deftest inc-first-test
           (testing "first test"
             (is (= '(2 2 3) (inc-first [1 2 3])))))
@@ -16,3 +12,7 @@
       (first-element '() :default) => :default
       (first-element nil :default) => :default
       (first-element (filter even? [1 3 5]) :default) => :default)
+
+(fact ""
+      (expand inc 0 10) => '(0 1 2 3 4 5 6 7 8 9))
+

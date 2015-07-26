@@ -8,3 +8,7 @@
   (if (empty? sequence)
     default
     (first sequence)))
+
+(defn expand [f x count]
+  (if (pos? count)
+    (cons x (expand f (f x) (dec count)))))
