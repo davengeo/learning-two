@@ -4,7 +4,7 @@ Different katas with the aim to learn
 
 ## Usage
 
-no needed 
+n/a
 
 ## License
 

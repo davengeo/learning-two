@@ -12,3 +12,16 @@
 (defn expand [f x count]
   (if (pos? count)
     (cons x (expand f (f x) (dec count)))))
+
+; some macros now
+
+;eval in the way of fluent api
+(defn sum_odds [x]
+  (->> (range x) (filter odd?) (reduce +)))
+
+;this macro helps to create my own REPL, LOL
+(defmacro loop-forever [& body] `(loop [] ~@body (recur)))
+
+(defn my-repl [] ( -> (read) (eval) (println) (loop-forever)))
+
+(def myagent (agent 0))
