@@ -12,3 +12,10 @@
 (defn expand [f x count]
   (if (pos? count)
     (cons x (expand f (f x) (dec count)))))
+
+; some macros now
+
+;eval in the way of fluent api
+(defn sum_odds [x]
+  (->> (range x) (filter odd?) (reduce +)))
+
