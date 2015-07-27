@@ -13,7 +13,7 @@
       (first-element nil :default) => :default
       (first-element (filter even? [1 3 5]) :default) => :default)
 
-(fact ""
+(fact "use expand to create a sequence"
       (expand inc 0 10) => '(0 1 2 3 4 5 6 7 8 9))
 
 (fact "sum_odds just sum the odds of a sequence ended by x-1"
