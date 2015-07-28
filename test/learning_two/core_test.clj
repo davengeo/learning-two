@@ -24,6 +24,10 @@
 
 (fact @myagent => 0)
 
+(deftest test-use-helper
+  (testing "use of helper"
+    (is (= 1 (use-helper [1 2 3])))))
+
 
 
 

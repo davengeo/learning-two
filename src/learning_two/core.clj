@@ -1,4 +1,5 @@
-(ns learning-two.core)
+(ns learning-two.core
+  (:require learning-two.helper))
 
 (defn inc-first [nums]
   (cons (inc (first nums))
@@ -25,3 +26,6 @@
 (defn my-repl [] ( -> (read) (eval) (println) (loop-forever)))
 
 (def myagent (agent 0))
+
+(defn use-helper [coll]
+  (helper coll))
