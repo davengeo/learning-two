@@ -1,6 +1,7 @@
 (ns learning-two.core-test
   (:require [clojure.test :refer :all]
-            [learning-two.core :refer :all])
+            [learning-two.core :refer :all]
+            [criterium.core :as bench])
   (:use midje.sweet))
 
 (deftest inc-first-test
@@ -27,6 +28,9 @@
 (deftest test-use-helper
   (testing "use of helper"
     (is (= 1 (use-helper [1 2 3])))))
+
+(bench/quick-bench
+  (use-helper [1 2 3]))
 
 
 
