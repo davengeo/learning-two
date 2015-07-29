@@ -1,5 +1,5 @@
 (ns learning-two.core
-  (:require learning-two.helper))
+  (:require [learning-two.custom-helper :as custom] :verbose))
 
 (defn inc-first [nums]
   (cons (inc (first nums))
@@ -28,4 +28,9 @@
 (def myagent (agent 0))
 
 (defn use-helper [coll]
-  (helper coll))
+  (custom/helperize coll))
+
+(defn rest-match [x]
+  "rest of string x matchs x with (.+):(.+)"
+  ^:learning
+    (rest (re-matches #"(.+):(.+)" x)))

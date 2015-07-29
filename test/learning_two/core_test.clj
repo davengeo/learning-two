@@ -1,7 +1,6 @@
 (ns learning-two.core-test
   (:require [clojure.test :refer :all]
-            [learning-two.core :refer :all]
-            [criterium.core :as bench])
+            [learning-two.core :refer :all])
   (:use midje.sweet))
 
 (deftest inc-first-test
@@ -29,8 +28,7 @@
   (testing "use of helper"
     (is (= 1 (use-helper [1 2 3])))))
 
-
-
-
-
-
+(fact "rest-match specs"
+      (rest-match "as:ds") => '("as" "ds")
+      (rest-match "as") => ()
+      (rest-match "") => ())
