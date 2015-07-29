@@ -3,10 +3,11 @@
             [learning-two.core :refer :all]
             [criterium.core :as bench]))
 
-;beautiful example in https://raw.githubusercontent.com/dakrone/cheshire/master/benchmarks/cheshire/test/benchmark.clj
+;beautiful example in
+; https://raw.githubusercontent.com/dakrone/cheshire/master/benchmarks/cheshire/test/benchmark.clj
 
 (deftest t-bench-use-helper
-  (println "-------- clj-json Benchmarks --------")
+  (println "-------- learning Benchmarks --------")
   (bench/with-progress-reporting
     (bench/quick-bench
       (use-helper [1 2 3]) :verbose))
