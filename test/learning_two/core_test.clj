@@ -29,8 +29,7 @@
   (testing "use of helper"
     (is (= 1 (use-helper [1 2 3])))))
 
-(bench/quick-bench
-  (use-helper [1 2 3]))
+
 
 
 
