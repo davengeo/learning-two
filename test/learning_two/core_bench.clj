@@ -12,3 +12,10 @@
     (bench/quick-bench
       (use-helper [1 2 3]) :verbose))
   (println "-------------------------------------"))
+
+(deftest test-bench-java
+  (println "-------- Benchmarks Java Code -------")
+  (bench/with-progress-reporting
+    (bench/quick-bench
+      (Thread/sleep 1000) :verbose))
+  (println "-------------------------------------"))

@@ -23,7 +23,7 @@
 ;this macro helps to create my own REPL, LOL
 (defmacro loop-forever [& body] `(loop [] ~@body (recur)))
 
-(defn my-repl [] ( -> (read) (eval) (println) (loop-forever)))
+(defn my-repl [] (-> (read) (eval) (println) (loop-forever)))
 
 (def myagent (agent 0))
 
