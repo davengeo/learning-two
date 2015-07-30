@@ -32,3 +32,6 @@
       (rest-match "as:ds") => '("as" "ds")
       (rest-match "as") => ()
       (rest-match "") => ())
+
+(fact "test over json cheshire lib"
+      (json-test) => "{\"foo\":\"bar\"}")

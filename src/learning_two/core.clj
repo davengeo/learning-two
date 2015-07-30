@@ -1,5 +1,6 @@
 (ns learning-two.core
-  (:require [learning-two.custom-helper :as custom] :verbose))
+  (:require [learning-two.custom-helper :as custom]
+            [cheshire.core :refer :all] :verbose))
 
 (defn inc-first [nums]
   (cons (inc (first nums))
@@ -33,4 +34,7 @@
 (defn rest-match [x]
   "rest of string x matchs x with (.+):(.+)"
   ^:learning
-    (rest (re-matches #"(.+):(.+)" x)))
+  (rest (re-matches #"(.+):(.+)" x)))
+
+(defn json-test []
+  (generate-string {:foo "bar"}))
