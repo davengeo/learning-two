@@ -35,3 +35,9 @@
 
 (fact "test over json cheshire lib"
       (json-test) => "{\"foo\":\"bar\"}")
+
+(fact "navigate a tree with zip"
+      (navigate) => '(a b c))
+
+(fact ""
+      (print-tree [1 '(a (i ii iii) c) 2]) => '(1 (a (i ii iii) c) 2))

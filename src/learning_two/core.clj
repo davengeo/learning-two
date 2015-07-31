@@ -1,6 +1,8 @@
 (ns learning-two.core
-  (:require [learning-two.custom-helper :as custom]
-            [cheshire.core :refer :all] :verbose))
+  (:require
+      [clojure.zip :as zip]
+      [learning-two.custom-helper :as custom]
+      [cheshire.core :refer :all] :verbose))
 
 (defn inc-first [nums]
   (cons (inc (first nums))
@@ -38,3 +40,19 @@
 
 (defn json-test []
   (generate-string {:foo "bar"}))
+
+;editing trees with zip
+;http://www.exampler.com/blog/2010/09/01/editing-trees-in-clojure-with-clojurezip
+
+(def original [1 '(a b c) 2])
+(def root-loc (zip/seq-zip (seq original)))
+(defn navigate []
+  (-> root-loc zip/down zip/right zip/node))
+
+(defn print-tree [original]
+  (loop [loc (zip/seq-zip (seq original))]
+    (if (zip/end? loc)
+      (zip/root loc)
+      (recur (zip/next
+               (do (println (zip/node loc))
+                   loc))))))
