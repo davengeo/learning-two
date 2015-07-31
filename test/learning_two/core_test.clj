@@ -39,5 +39,5 @@
 (fact "navigate a tree with zip"
       (navigate) => '(a b c))
 
-(fact ""
+(fact "this fact shows the tree members in sysout, have a look"
       (print-tree [1 '(a (i ii iii) c) 2]) => '(1 (a (i ii iii) c) 2))
