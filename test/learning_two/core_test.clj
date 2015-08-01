@@ -33,6 +33,9 @@
       (rest-match "as") => ()
       (rest-match "") => ())
 
+(fact "rest-match also bring its metadata"
+      (:learning (meta rest-match)) => nil)
+
 (fact "test over json cheshire lib"
       (json-test) => "{\"foo\":\"bar\"}")
 
