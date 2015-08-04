@@ -1,5 +1,6 @@
 (ns learning-two.structures
-  (:use midje.sweet))
+  (:use midje.sweet)
+  (:use com.rpl.specter))
 
 
 (def baselist (list :pedro :miki))
@@ -14,3 +15,5 @@
       (identical? (next lst1) (next lst2)) => true)
 
 (def my-tree {:val 50, :L nil, :R nil})
+
+
